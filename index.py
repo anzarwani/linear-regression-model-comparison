@@ -1,4 +1,3 @@
-from math import lgamma
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -41,17 +40,17 @@ def lr(X_train, X_test, y_train, y_test):
     return score, lg
 
 def main():
-	st.title("A Streamlit Demo!")
+	st.title("A Streamlit Demo! For checking accuracy of different Linear Regression Methods")
 	data = loadData()
 	X_train, X_test, y_train, y_test, le = pre_process(data)
 
-	# Insert Check-Box to show the snippet of the data.
+	
 	if st.checkbox('Show Raw Data'):
-		st.subheader("Showing raw data---->>>")	
+		st.subheader("Showing raw data>>>")	
 		st.write(data.head())
 
 
-	# ML Section
+	
 	choose_model = st.sidebar.selectbox("Choose the ML Model",
 		["NONE","Linear regression", "LR - Polynomial", "Ridge Regression"])
 
